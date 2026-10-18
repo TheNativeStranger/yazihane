@@ -85,16 +85,34 @@ Eserinizin klasörüne isterseniz bir `KITAP.md` koyabilirsiniz (`templates/KITA
 
 ## Kurulum
 
-Claude Code'da ya da Claude masaüstü uygulamasının Code sekmesinde:
+**Claude uygulamasında (sohbet ve Cowork):** **Customize → Plugins** bölümünü açın, **Add marketplace** seçin, `isuiteapp/yazihane` yazın ve Yazıhane'yi kurun. Hesabınıza kurulan eklenti Claude Code'da da görünür.
+
+**Claude Code'da ya da Claude masaüstü uygulamasının Code sekmesinde:**
 
 ```
 /plugin marketplace add isuiteapp/yazihane
 /plugin install yazihane@yazihane
 ```
 
-GitHub'a erişmeden kurmak isterseniz [Sürümler](https://github.com/isuiteapp/yazihane/releases) sayfasından zip dosyasını indirip açın ve ilk komutta `isuiteapp/yazihane` yerine açtığınız klasörün yolunu yazın.
+GitHub'a erişmeden kurmak isterseniz [Sürümler](https://github.com/isuiteapp/yazihane/releases) sayfasından zip dosyasını indirin; Claude uygulamasında **Upload plugin** ile yükleyebilir ya da açtığınız klasörün yolunu Claude Code'daki ilk komutta `isuiteapp/yazihane` yerine yazabilirsiniz.
 
 İlk kullanımlarda Claude; Word dosyalarınızı okuma kopyasına çevirmek, kelime saymak ve rapor klasörü oluşturmak için izin isteyebilir. Bunlar yalnızca okuma ve kopya oluşturma işlemleridir; özgün dosyalarınız değiştirilmez.
+
+## Nerede çalışır
+
+| | Claude Code | Cowork | Sohbet (claude.ai) |
+|---|---|---|---|
+| Tek tek modlar (okur, satır, imla, süreklilik…) | Evet | Evet | Evet |
+| Yayın kurulu ve usta kurulu | Bağımsız okurlar aynı anda okur | Bağımsız okurlar aynı anda okur | Okurlar sırayla tek oturumda okur; bağımsızlık sınırlıdır |
+| Bölüm dosyaları | Klasörünüzden okunur (.docx dahil) | Klasörünüzden okunur | Metni yapıştırın ya da dosyayı ekleyin |
+| Bütün bir romanın sinopsisi | Evet | Evet | Uzun eserlerde sınırlı; Cowork ya da Claude Code önerilir |
+
+## Ne çalıştırır, nereye bağlanır
+
+- Yazıhane yalnızca talimat dosyalarından (beceriler ve okur tanımları) oluşur. Kendi sunucusu, bağlantısı (MCP), kancası ya da programı yoktur; hiçbir yere kendiliğinden veri göndermez.
+- Metninizi Claude'un dosya okuma araçlarıyla okur. Word, ODT ya da RTF dosyalarının düz metin kopyasını çıkarmak için macOS'ta `textutil`, kuruluysa `pandoc`; kelime saymak için `wc` komutunu çalıştırır.
+- Raporları eserinizin klasöründe `yazihane-raporlari/` ve `yayinevi-dosyasi/` klasörlerine yazar. Özgün dosyalarınızı değiştirmez.
+- Olgu denetçisi, alıntıları ve olgusal ayrıntıları doğrulamak için Claude'un web araması ve sayfa okuma araçlarını kullanır; arama sorgularında metninizden kısa ifadeler geçebilir. Yayınevi dosyası, adını verdiğiniz yayınevinin dosya gönderim koşullarını bulmak için web araması yapabilir.
 
 ## Kullanım maliyeti
 
@@ -107,3 +125,7 @@ Hata bildirmek ya da öneride bulunmak için GitHub'daki [Issues](https://github
 ## Lisans
 
 MIT. Yazıhane'yi kullanabilir, değiştirebilir ve paylaşabilirsiniz; yalnızca lisans metnini ve yazarın adını koruyun. Ayrıntı için [LICENSE](LICENSE) dosyasına bakın.
+
+## In English
+
+Yazıhane ("the writing room") is a Claude plugin for Turkish-language fiction writers. It works like a publishing house's editorial board: six independent readers (beta reader, developmental editor, line editor, copy editor following the Turkish Language Association rules, fact-checker and publisher's reader) review a chapter, and a chief editor verifies their findings and reduces them to at most three decisions. It can also read a text through the lens of twelve masters (Chekhov, Dostoevsky, Kafka, Gogol, Tolstoy and major Turkish writers) without imitating them, and it prepares a submission package for publishers (synopsis, cover letter, author bio, back-cover copy, checklist). It never rewrites the author's text unasked, never invents facts, credentials or praise, and protects the author's own voice. All instructions and output are in Turkish.

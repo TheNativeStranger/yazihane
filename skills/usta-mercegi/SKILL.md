@@ -48,7 +48,7 @@ Listede olmayan bir usta istenirse genel bilginle aynı yapıda oku, ama bunu ba
 
 **Tek usta:** Mercek dosyasını baştan sona oku, sonra metni oku ve merceğin sorularını metne sor. Raporu aşağıdaki biçimde kendin ver.
 
-**Birden çok usta:** Her usta için `usta-okuru` ajanını **tek mesajda, paralel** olarak Agent aracıyla başlat (alt ajan türü `yazihane:usta-okuru`; ortam ön eksiz adı kullanıyorsa `usta-okuru`). Her birine şunları ver: mercek dosyasının **mutlak yolu**, okunacak metnin mutlak yolları, varsa kitap dosyasının yolu ve yazarın sorusu. Okurlara birbirlerinin merceğini verme. Raporlar gelince:
+**Birden çok usta:** Her usta için `usta-okuru` ajanını **tek mesajda, paralel** olarak Agent aracıyla başlat (alt ajan türü `yazihane:usta-okuru`; ortam ön eksiz adı kullanıyorsa `usta-okuru`). Her birine şunları ver: mercek dosyasının **mutlak yolu**, okunacak metnin mutlak yolları, varsa kitap dosyasının yolu ve yazarın sorusu. Okurlara birbirlerinin merceğini verme. **Agent aracı yoksa** (ör. claude.ai sohbeti) her ustanın mercek dosyasını sırayla okuyup merceği kendin uygula; `editor` becerisindeki "Çalışma ortamı" kuralına uy. Raporlar gelince:
 
 - Her iddianın alıntısını metinde doğrula; bulamadığını at.
 - Merceklerin **birleştiği** yeri öne al: farklı ustaların aynı yeri göstermesi en güçlü işarettir.

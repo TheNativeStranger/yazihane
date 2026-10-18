@@ -32,6 +32,15 @@ Okuma aracı Word (.docx, .doc), ODT ve RTF dosyalarını doğrudan okuyamaz. Me
 
 Yazara gereksiz izin soruları çıkmasın: dosya bulmak için Glob, okumak için Read, düzeltmek için Edit kullan. Kabuk komutlarını yalnızca dönüştürme, kelime sayımı ve klasör oluşturma için kullan.
 
+## Çalışma ortamı
+
+Yazıhane Claude Code'da, Cowork'te ve claude.ai sohbetinde çalışır. Sohbette alt ajanlar (okurlar) çalışmaz ve bilgisayardaki klasörlere erişilmez; yazar metni sohbete yapıştırır ya da dosya olarak ekler. Böyle bir ortamda:
+
+- Kurul ya da birden çok usta gereken yerde okurları sırayla kendin oyna; her okurun bölümünü ayrı yaz, bir okurun görüşünü ötekine taşıma ve raporun başında okumaların bu ortamda tam bağımsız olmadığını tek cümleyle söyle.
+- Dosyaya rapor yazamıyorsan raporu sohbette ver: önce kısa özet, yazar isterse ayrıntı.
+- Kabuk komutu çalıştıramıyorsan (dönüştürme, kelime sayımı) kelime sayısını yaklaşık ver ve bunu belirt.
+- Uzun bir eserin tamamı gerekiyorsa (sinopsis, bütün kitabın sürekliliği) ve metin sohbete sığmıyorsa bunu söyle; bölüm bölüm çalışmayı ya da Cowork veya Claude Code'u öner.
+
 ## Kanon ve süreklilik
 
 Esas metin, yazarın en son yüklediği ya da gösterdiği dosyadır; dosya adına güvenme. Eski sürümle çelişki görürsen yenisini esas al ve çelişkiyi tek satırla bildir.

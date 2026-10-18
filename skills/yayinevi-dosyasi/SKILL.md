@@ -38,6 +38,7 @@ Sinopsis ve arka kapak eserin **tamamına** dayanmalıdır.
 
 - Toplam metin yaklaşık 20.000 kelimenin altındaysa bölümleri kendin, sırasıyla ve baştan sona oku.
 - Daha uzunsa bölümleri sırayı bozmadan yaklaşık 20.000 kelimelik gruplara ayır ve her grup için `bolum-ozetcisi` ajanını **tek mesajda, paralel** olarak başlat (alt ajan türü `yazihane:bolum-ozetcisi`; ortam ön eksiz adı kullanıyorsa `bolum-ozetcisi`). Her ajana dosyaların mutlak yollarını ve varsa kitap dosyasının yolunu ver.
+- **Agent aracı yoksa** (ör. claude.ai sohbeti) haritayı bölüm bölüm kendin çıkar; eser sohbete sığmıyorsa bunu söyle ve Cowork ya da Claude Code'u öner.
 - Haritayı `yazihane-raporlari/bolum-haritasi-<YYYY-AA-GG>.md` dosyasına kaydet ve başına şunu yaz: `Çalışma notu — kanon değildir; metin değişince yeniden çıkarılır.`
 
 ## 4. Belgeleri yaz
@@ -59,7 +60,7 @@ Yazar bir yayınevi adı verdiyse ve web araması mümkünse, o yayınevinin ken
 
 ## 5. Dosyayı sına
 
-Tanıtım mektubu, sinopsis ve örnek bölümler hazır olunca `yayinevi-okuru` ajanını çalıştır (alt ajan türü `yazihane:yayinevi-okuru`). Ona bu belgelerin ve örnek bölümlerin mutlak yollarını ver ve şunu sor: "Bu, yayınevine gelmiş bir dosya. Mektup ve sinopsis seni örnek bölümlere taşıyor mu? Örnek bölümler sinopsisin vaadini karşılıyor mu? Dosyanın tamamını ister miydin? Okur raporunu kendi biçiminle ver." Raporu `yayinevi-dosyasi/07-yayinevi-okuru-raporu.md` dosyasına kaydet.
+Tanıtım mektubu, sinopsis ve örnek bölümler hazır olunca `yayinevi-okuru` ajanını çalıştır (alt ajan türü `yazihane:yayinevi-okuru`). Ona bu belgelerin ve örnek bölümlerin mutlak yollarını ver ve şunu sor: "Bu, yayınevine gelmiş bir dosya. Mektup ve sinopsis seni örnek bölümlere taşıyor mu? Örnek bölümler sinopsisin vaadini karşılıyor mu? Dosyanın tamamını ister miydin? Okur raporunu kendi biçiminle ver." Raporu `yayinevi-dosyasi/07-yayinevi-okuru-raporu.md` dosyasına kaydet. Agent aracı yoksa sınamayı yayınevi okurunun gözüyle kendin yap ve raporda bunu belirt.
 
 Okurun raporunda belgelerle (mektup, sinopsis, arka kapak) ilgili Kesin sorun varsa belgeyi düzelt ve neyi düzelttiğini söyle. Sorun romanın metnindeyse metne dokunma; yazara bildir.
 

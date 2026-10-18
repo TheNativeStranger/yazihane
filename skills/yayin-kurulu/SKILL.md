@@ -39,6 +39,15 @@ Her okura aynı kısa görevi ver:
 
 Okurlara birbirlerinin görüşlerini ya da senin ön yargını **verme**; kurulun değeri bağımsız okumalardır.
 
+**Agent aracı yoksa** (ör. claude.ai sohbeti) `editor` becerisindeki "Çalışma ortamı" kuralına göre okurları sırayla kendin oyna ve her birine aynı rapor biçimini uygula:
+- **Beta okur:** yalnızca hissedilen okur tepkisi; düzeltme yok.
+- **Geliştirme editörü:** hikâye, yapı, sahne işlevi, karakter doğruluğu; en fazla üç mesele.
+- **Satır editörü:** ritim, tekrar, klişe, belirsiz özne; bütün itirazlar tek seferde.
+- **Redaktör:** TDK'ya göre imla ve süreklilik; düzeltme tablosu.
+- **Olgu denetçisi:** alıntı, atıf ve olguların doğrulanması; web araması yoksa "doğrulanamadı" de, uydurma.
+- **Yayınevi okuru:** okur raporu; kabul, revizyonla kabul ya da ret.
+- **Usta okuru** (istendiyse): ustanın merceğiyle okuma; taklit yok.
+
 ## 4. Baş editör olarak birleştir
 
 Raporlar gelince:
