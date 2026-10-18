@@ -2,7 +2,9 @@
 
 *Literary Editor & Book Coach*
 
-Yazıhane, Türkçe yazan her yazar için hazırlanmış bir Claude eklentisidir. Romanınızı ya da öykünüzü bir yayınevinin yayın kurulu gibi okur: birbirinden bağımsız altı okur aynı bölümü okur, bir baş editör görüşlerini doğrulayıp en fazla üç karara indirir. Ayrıca ustaların merceğiyle okur, imla ve süreklilik denetler, yayınevine gidecek dosyanızı hazırlar.
+Yazıhane, Türkçe yazan her yazar için hazırlanmış bir editör eklentisidir. Romanınızı ya da öykünüzü bir yayınevinin yayın kurulu gibi okur: altı farklı okur bakışını bir araya getirir, bir baş editör görüşleri doğrulayıp en fazla üç karara indirir. Ortam bağımsız alt ajanları destekliyorsa okumalar ayrı görevlerle, desteklemiyorsa aynı oturumda sırayla yapılır ve bu belirtilir. Ayrıca ustaların merceğiyle okur, imla ve süreklilik denetler, yayınevine gidecek dosyanızı hazırlar.
+
+**0.7.0:** Claude kurulumu yanında ChatGPT ve Codex için taşınabilir, yalnızca becerilerden oluşan OpenAI paketi hazırlanabilir. OpenAI dizinine başvuru ve yayımlama henüz bu depodaki dosyalarla tamamlanmış sayılmaz. [ChatGPT yayımlama rehberi](docs/CHATGPT_YAYINLAMA.md).
 
 **Yazıhane yazarın yerine yazmaz.** Değerlendirir, gösterir, önerir. Eserin son metni her zaman sizin cümlelerinizdir; sesiniz korunur.
 
@@ -11,7 +13,7 @@ Yazıhane, Türkçe yazan her yazar için hazırlanmış bir Claude eklentisidir
 ## Hızlı başlangıç
 
 1. Eklentiyi kurun (aşağıda).
-2. Eserinizin bulunduğu klasörü Claude'da açın. Bölümleriniz .docx, .md, .txt ya da PDF olabilir.
+2. Eserinizin dosyasını ekleyin veya metni yapıştırın; klasör erişimi olan bir ortamda eser klasörünüzü açabilirsiniz. Desteklenen biçimler kullanılan ortamın araçlarına bağlıdır.
 3. İsterseniz `/yazihane:kitap-kur` ile eserinizi Yazıhane'ye tanıtın. Bu adım isteğe bağlıdır.
 4. Bir bölümü kurula okutun: `/yazihane:yayin-kurulu bolum-01.docx`
 
@@ -19,7 +21,7 @@ Komut yazmak zorunda değilsiniz: "Şu bölüme bir bakar mısın?" demeniz de y
 
 ## Yayın kurulu
 
-`/yazihane:yayin-kurulu bolum-05.docx` bir bölümü altı bağımsız okura aynı anda okutur. Okurlar birbirinin görüşünü görmez. Baş editör her iddiayı metinde doğrular, aynı meseleleri birleştirir, okurların ayrıştığı yerleri "karar sizin" diye iki taraflı gösterir ve en fazla üç karar çıkarır. Tam rapor `yazihane-raporlari/` klasörüne kaydedilir.
+Claude'da `/yazihane:yayin-kurulu bolum-05.docx`, ChatGPT'de ise Yazıhane seçiliyken "Bu bölümü yayın kuruluna okut" isteği altı okur bakışını çalıştırır. Bağımsız görevler kullanılabildiğinde okurlar birbirinin görüşünü görmez. Baş editör her iddiayı metinde doğrular, aynı meseleleri birleştirir, okurların ayrıştığı yerleri "karar sizin" diye iki taraflı gösterir ve en fazla üç karar çıkarır. Dosya çıktısı destekleniyorsa tam rapor ayrı çıktı olarak kaydedilir; yerel projede `yazihane-raporlari/` kullanılır. Çıktı aracı yoksa rapor sohbette sunulur.
 
 | Okur | Ne yapar |
 |---|---|
@@ -92,6 +94,21 @@ Eserinizin klasörüne isterseniz bir `KITAP.md` koyabilirsiniz (`templates/KITA
 
 ## Kurulum
 
+### ChatGPT ve Codex
+
+OpenAI paketi için depo kökünde Python 3.9 veya üzeriyle:
+
+```bash
+python3 scripts/package_openai.py --check
+python3 scripts/package_openai.py
+```
+
+İkinci komut `dist/yazihane-openai-0.7.0.zip` oluşturur. Paketin kökünde `plugin.json`, `skills/`, `templates/`, `assets/` ve lisans bulunur; Claude'a özgü ajan kayıtları pakete alınmaz. Okur prosedürleri becerilerin içindeki ortak kaynaklardan okunur.
+
+Geliştirme sırasında paketi yerel marketplace desteğiyle kurup temiz bir sohbette deneyin; [resmî test rehberi](https://developers.openai.com/plugins/deploy/connect-chatgpt) kurulumu açıklar. Genel dizinde bulunabilmesi için doğrulanmış geliştirici kimliğiyle OpenAI'ye yüklenmesi, kontrollerin tamamlanması ve onay sonrası yayımlanması gerekir. Ayrıntılar [yayımlama rehberinde](docs/CHATGPT_YAYINLAMA.md). Henüz bir herkese açık ChatGPT kurulum bağlantısı yoktur.
+
+### Claude
+
 **Claude uygulamasında (sohbet ve Cowork):** **Customize → Plugins** bölümünü açın, **Add marketplace** seçin, `isuiteapp/yazihane` yazın ve Yazıhane'yi kurun. Hesabınıza kurulan eklenti Claude Code'da da görünür.
 
 **Claude Code'da ya da Claude masaüstü uygulamasının Code sekmesinde:**
@@ -105,25 +122,28 @@ GitHub'a erişmeden kurmak isterseniz [Sürümler](https://github.com/isuiteapp/
 
 İlk kullanımlarda Claude; Word dosyalarınızı okuma kopyasına çevirmek, kelime saymak ve rapor klasörü oluşturmak için izin isteyebilir. Bunlar yalnızca okuma ve kopya oluşturma işlemleridir; özgün dosyalarınız değiştirilmez.
 
-## Nerede çalışır
+## Ortama göre davranış
 
-| | Claude Code | Cowork | Sohbet (claude.ai) |
-|---|---|---|---|
-| Tek tek modlar (okur, satır, imla, süreklilik…) | Evet | Evet | Evet |
-| Yayın kurulu ve usta kurulu | Bağımsız okurlar aynı anda okur | Bağımsız okurlar aynı anda okur | Okurlar sırayla tek oturumda okur; bağımsızlık sınırlıdır |
-| Bölüm dosyaları | Klasörünüzden okunur (.docx dahil) | Klasörünüzden okunur | Metni yapıştırın ya da dosyayı ekleyin |
-| Bütün bir romanın sinopsisi | Evet | Evet | Uzun eserlerde sınırlı; Cowork ya da Claude Code önerilir |
+| Özellik | Araçlar mevcutsa | Araçlar yoksa |
+|---|---|---|
+| Yayın kurulu ve usta kurulu | Bağımsız alt görevlerle okuma | Aynı oturumda sırayla okuma; bağımsızlık sınırı belirtilir |
+| Bölüm dosyaları | İzin verilen dosya veya eklerden okuma | Metni sohbete yapıştırma |
+| Rapor ve yayınevi dosyası | Ayrı dosya çıktısı | Sohbette metin çıktısı |
+| Olgu doğrulama | Kaynak arama ve sayfa okuma | Doğrulanamadı etiketi; kaynak uydurulmaz |
+| Bütün romanın sinopsisi | Tam metne dayanan bölüm haritası | Eksik bölümler belirtilir ve kapsamı sınırlı taslak verilir |
+
+Claude'daki `/yazihane:...` yazımı bütün ortamlarda kayıtlı bir slash komutu olduğu anlamına gelmez. ChatGPT'de doğal dilde istek yeterlidir; kullanılabilir araçları ve eklenti erişimini hesap ile çalışma alanı belirler.
 
 ## Ne çalıştırır, nereye bağlanır
 
-- Yazıhane yalnızca talimat dosyalarından (beceriler ve okur tanımları) oluşur. Kendi sunucusu, bağlantısı (MCP), kancası ya da programı yoktur; hiçbir yere kendiliğinden veri göndermez.
-- Metninizi Claude'un dosya okuma araçlarıyla okur. Word, ODT ya da RTF dosyalarının düz metin kopyasını çıkarmak için macOS'ta `textutil`, kuruluysa `pandoc`; kelime saymak için `wc` komutunu çalıştırır.
-- Raporları eserinizin klasöründe `yazihane-raporlari/` ve `yayinevi-dosyasi/` klasörlerine yazar. Özgün dosyalarınızı değiştirmez.
-- Olgu denetçisi, alıntıları ve olgusal ayrıntıları doğrulamak için Claude'un web araması ve sayfa okuma araçlarını kullanır; arama sorgularında metninizden kısa ifadeler geçebilir. Yayınevi dosyası, adını verdiğiniz yayınevinin dosya gönderim koşullarını bulmak için web araması yapabilir.
+- Çalışan eklenti yalnızca talimat dosyaları, kaynaklar, şablonlar ve simgeden oluşur. Kendi sunucusu, MCP bağlantısı veya kancası yoktur. Paketleme betiği yalnızca geliştiricinin hazırlık aracıdır; eklenti çalışırken yürütülmez.
+- Metninizi kullandığınız ortamın dosya araçlarıyla okur. Dönüştürme gerekiyorsa mevcut belge araçlarını; yerel ortamda kuruluysa `textutil` veya `pandoc` kullanabilir.
+- Raporları ayrı çıktı olarak verir; yerel projede `yazihane-raporlari/` ve `yayinevi-dosyasi/` kullanılır. Açık dosya düzenleme isteği olmadan özgün eseri değiştirmez.
+- Olgu denetçisi, alıntıları ve olgusal ayrıntıları doğrulamak için ortamın web araması ve sayfa okuma araçlarını kullanabilir; arama sorgularında metninizden kısa ifadeler geçebilir. Yayınevi dosyası, adını verdiğiniz yayınevinin koşullarını araştırabilir. İşleme ve saklama koşulları kullandığınız yapay zekâ hizmetinin ayarlarına ve politikalarına tabidir.
 
 ## Kullanım maliyeti
 
-Yayın kurulu altı okuru aynı anda çalıştırır; yayınevi dosyası bütün eseri okur. Bu iki komut, Claude kullanım kotanızdan sıradan bir sohbete göre birkaç kat fazla harcar. Günlük çalışmada tek modları (`okur`, `satir`, `imla`) ya da `hızlı` kurulu kullanın; tam kurulu bir bölümü bitirdiğinizde çalıştırın.
+Yayın kurulu aynı metni birden fazla açıdan, yayınevi dosyası ise bütün eseri okur. Bunlar tek moda göre daha fazla model kullanımı gerektirebilir; kota ve ücret kullanılan hizmetin planına bağlıdır. Eklentinin kendi haricî API anahtarı veya sunucusu yoktur. Daha kısa bir okuma için tek modları (`okur`, `satir`, `imla`) ya da `hızlı` kurulu seçebilirsiniz.
 
 ## Geri bildirim
 
@@ -135,4 +155,4 @@ MIT. Yazıhane'yi kullanabilir, değiştirebilir ve paylaşabilirsiniz; yalnızc
 
 ## In English
 
-Yazıhane ("the writing room") is a Claude plugin for Turkish-language fiction writers. It works like a publishing house's editorial board: six independent readers (beta reader, developmental editor, line editor, copy editor following the Turkish Language Association rules, fact-checker and publisher's reader) review a chapter, and a chief editor verifies their findings and reduces them to at most three decisions. It can also read a text through the lens of twelve masters (Chekhov, Dostoevsky, Kafka, Gogol, Tolstoy and major Turkish writers) without imitating them, and it prepares a submission package for publishers (synopsis, cover letter, author bio, back-cover copy, checklist). It never rewrites the author's text unasked, never invents facts, credentials or praise, and protects the author's own voice. All instructions and output are in Turkish.
+Yazıhane ("the writing room") is a fiction-editing plugin with a Claude-compatible installation and a portable skills-only package for ChatGPT and Codex. Six reader perspectives review a chapter, and a chief editor verifies the findings and reduces them to at most three decisions. Separate readers require host subagent support; otherwise readings run sequentially in one session with an explicit disclosure. It also offers twelve literary lenses, spelling and continuity review, publisher submission drafts, and on-request Campbell/Vogler structure maps. It preserves the writer's voice and does not rewrite unasked. Instructions and reports default to Turkish. Public OpenAI directory availability requires submission, review and publication; this repository does not establish that approval.

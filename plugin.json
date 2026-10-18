@@ -1,0 +1,43 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "yazihane",
+  "version": "0.7.0",
+  "description": "Türkçe roman ve öyküler için yayın kurulu, edebî editörlük, TDK imla denetimi, usta mercekleri, yayınevi dosyası ve yapı haritası.",
+  "author": { "name": "Ali Osman Akçaoğlu" },
+  "homepage": "https://github.com/isuiteapp/yazihane",
+  "repository": "https://github.com/isuiteapp/yazihane",
+  "license": "MIT",
+  "keywords": ["Turkish", "fiction", "editor", "roman", "öykü", "TDK", "sinopsis"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Yazıhane",
+        "shortDescription": "Fiction editor for Turkish",
+        "longDescription": "An editorial board for Turkish-language novels and short stories. Read a manuscript from six perspectives: beta reader, developmental editor, line editor, copy editor, fact-checker and publisher's reader. A chief editor checks the findings against the text and presents at most three main decisions. Explore twelve literary lenses without imitating their authors, review spelling and continuity, prepare a publisher submission draft, or map a story with Campbell or Vogler when requested.\n\nYazıhane preserves the writer's voice and does not rewrite the manuscript unasked. Workflows and reports are in Turkish by default. Readers run as separate tasks only when the host supports and permits subagents; otherwise readings take place sequentially in one session and this limitation is disclosed. File output and fact-checking depend on the host's available tools. Full-book reports require access to the full manuscript.\n\nThis package contains instructions and reference files only. It has no MCP server, external account, API key or hosted backend of its own.",
+        "developerName": "Ali Osman Akçaoğlu",
+        "category": "Productivity",
+        "capabilities": ["Read manuscripts", "Write editorial reports"],
+        "websiteURL": "https://github.com/isuiteapp/yazihane",
+        "supportURL": "https://github.com/isuiteapp/yazihane/issues",
+        "defaultPrompt": [
+          "Bu bölümü yayın kuruluna okut; metnimi yeniden yazmadan en önemli üç meseleyi göster.",
+          "Bu sahneyi Çehov'un merceğiyle değerlendir; kendi sesimi koru.",
+          "Paylaştığım esere dayanarak yayınevine gönderilecek bir dosya taslağı hazırla."
+        ],
+        "brandColor": "#1C5145",
+        "composerIcon": "./assets/yazihane.svg",
+        "logo": "./assets/yazihane.svg"
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "Portable skills-only package for ChatGPT and Codex, with shared reader procedures, host-aware tools and sequential reading fallback. Claude Code agent definitions use the same reader sources.",
+        "translations": {
+          "tr-TR": {
+            "subtitle": "Romanınız için yayın kurulu",
+            "description": "Türkçe roman ve öyküler için altı okur bakışı, baş editörün doğruladığı en fazla üç ana karar, on iki ustanın merceği, TDK imla ve süreklilik denetimi, yayınevi dosyası ve istek üzerine Campbell/Vogler yapı haritası. Yazarın sesini korur; istenmeden romanı yeniden yazmaz. Bağımsız ajan desteği yoksa okumalar aynı oturumda sırayla yapılır ve bu belirtilir. Dosya çıktısı ve web doğrulaması kullanılan ortamın araçlarına bağlıdır."
+          }
+        }
+      }
+    }
+  }
+}

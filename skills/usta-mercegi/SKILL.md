@@ -1,14 +1,13 @@
 ---
 name: usta-mercegi
 description: Bir metni bir ya da birkaç ustanın merceğiyle okur — Çehov, Dostoyevski, Kafka, Gogol, Tolstoy, Sabahattin Ali, Ahmet Haşim, Necip Fazıl, Tanpınar, Sait Faik, Yusuf Atılgan, Oğuz Atay ya da yazarın eklediği başka bir usta. Ustayı taklit edilecek bir model olarak değil, yazarın elindekini görünür kılan bir mercek olarak kullanır; pastiş yapmaz, metni ustanın üslubuyla yeniden yazmaz. Yazar "X olsa nasıl yazardı?", "bunu Çehov'un gözüyle oku", "bu sahneye hangi usta ne derdi" dediğinde kullan.
-argument-hint: "<usta | usta1,usta2 | kurul> [dosya]"
 ---
 
 # Ustaların Merceği
 
-Önce `editor` becerisinin ilkelerini uygula (yüklü değilse yükle) ve projede kitap dosyası (`KITAP.md`) varsa oku.
+Önce [editor](../editor/SKILL.md) becerisinin ilkelerini oku ve uygula; projede kitap dosyası (`KITAP.md`) varsa oku.
 
-İstek: $ARGUMENTS
+İstek: yazarın bu görevde belirttiği metin ve istek
 
 Ustalar taklit edilecek model değil, **yazarın elindekini görünür kılan mercektir.** Merceğin işi, yazarın metninde zaten olanı ve olabilecek olanı göstermektir; yazarı bir ustanın üslubuna çekmek değil.
 
@@ -36,7 +35,7 @@ Her mercek dosyasında ustanın ne öğrettiği, metne sorulacak sorular, ustada
 
 Yazar ustanın adını farklı yazabilir (Çehof, Dostayevski, Haşim, N. Fazıl); ne kastettiği açıksa sorma.
 
-Listede olmayan bir usta istenirse genel bilginle aynı yapıda oku, ama bunu baştan tek cümleyle söyle ve emin olmadığın eser adı, tarih ya da olay örgüsü ayrıntısını verme. Yazar isterse o usta için eklentideki `templates/USTA.md` şablonuyla projenin `ustalar/` klasörüne kalıcı bir mercek dosyası hazırlanabileceğini bir kez söyle.
+Listede olmayan bir usta istenirse genel bilginle aynı yapıda oku, ama bunu baştan tek cümleyle söyle ve emin olmadığın eser adı, tarih ya da olay örgüsü ayrıntısını verme. Yazar isterse o usta için eklentideki `../../templates/USTA.md` şablonuyla projenin `ustalar/` klasörüne kalıcı bir mercek dosyası hazırlanabileceğini bir kez söyle.
 
 ## 2. Ustayı seç
 
@@ -48,14 +47,14 @@ Listede olmayan bir usta istenirse genel bilginle aynı yapıda oku, ama bunu ba
 
 **Tek usta:** Mercek dosyasını baştan sona oku, sonra metni oku ve merceğin sorularını metne sor. Raporu aşağıdaki biçimde kendin ver.
 
-**Birden çok usta:** Her usta için `usta-okuru` ajanını **tek mesajda, paralel** olarak Agent aracıyla başlat (alt ajan türü `yazihane:usta-okuru`; ortam ön eksiz adı kullanıyorsa `usta-okuru`). Her birine şunları ver: mercek dosyasının **mutlak yolu**, okunacak metnin mutlak yolları, varsa kitap dosyasının yolu ve yazarın sorusu. Okurlara birbirlerinin merceğini verme. **Agent aracı yoksa** (ör. claude.ai sohbeti) her ustanın mercek dosyasını sırayla okuyup merceği kendin uygula; `editor` becerisindeki "Çalışma ortamı" kuralına uy. Raporlar gelince:
+**Birden çok usta:** Önce `../editor/references/okurlar/usta-okuru.md` rolünü oku. Alt ajan desteği ve oturum kuralları izin veriyorsa her mercek için ayrı ve mümkünse paralel görev başlat; rol tanımını, mercek dosyasını, metni, varsa kitap dosyasını ve yazarın sorusunu erişilebilir biçimde ilet. Okurlara birbirlerinin görüşlerini verme. Ajan desteği yoksa her merceği sırayla kendin uygula ve okumaların aynı oturumda, tam bağımsız olmadan yapıldığını belirt. Her okumadan sonra:
 
 - Her iddianın alıntısını metinde doğrula; bulamadığını at.
 - Merceklerin **birleştiği** yeri öne al: farklı ustaların aynı yeri göstermesi en güçlü işarettir.
 - Merceklerin **ayrıştığı** yeri (biri "kısalt" derken öteki "aç" diyorsa) çözme; **Tercih meselesi** olarak iki tarafı da göster.
 - Toplamda en fazla üç madde.
 
-Metin sohbete yapıştırılmışsa ve ajan çalıştıracaksan önce proje kökünde `yazihane-raporlari/metin-<YYYY-AA-GG>.md` dosyasına kaydet; ajanlar sohbeti göremez. Metin Word ya da ODT dosyasıysa önce `editor` becerisindeki "Metin dosyaları" kuralıyla düz metne çevir.
+Metin sohbetteyse bağımsız göreve metnin tamamını veya erişilebilir bir okuma kopyasını ver. Word ya da ODT doğrudan okunamıyorsa `editor` becerisindeki "Metin dosyaları" kuralını uygula. Kayıt ya da dosya erişimi yoksa sırayla okuma yolunu kullan.
 
 ## 4. Rapor biçimi
 

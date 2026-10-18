@@ -1,14 +1,13 @@
 ---
 name: yapi-haritasi
 description: Romanın yapısını Joseph Campbell'ın Kahramanın Sonsuz Yolculuğu (17 aşama) ya da Christopher Vogler'in Yazarın Yolculuğu (12 aşama) şablonuna göre haritalar. Her aşamanın romanda nerede olduğunu, metinde var mı, örtük mü, yok mu ya da roman onu bilerek mi farklı kurduğunu gösterir; roman bitmemişse hikâyenin şu an hangi aşamada olduğunu söyler. Yalnızca yazar Campbell, Vogler, kahramanın yolculuğu ya da yapı haritası istediğinde kullan; yazar istemeden önerme.
-argument-hint: "[campbell | vogler] [dosya(lar)]"
 ---
 
 # Yapı Haritası
 
-Önce `editor` becerisinin ilkelerini uygula (yüklü değilse yükle) ve projede kitap dosyası (`KITAP.md`) varsa oku.
+Önce [editor](../editor/SKILL.md) becerisinin ilkelerini oku ve uygula; projede kitap dosyası (`KITAP.md`) varsa oku.
 
-İstek: $ARGUMENTS
+İstek: yazarın bu görevde belirttiği metin ve istek
 
 ## Bu harita ne değildir
 
@@ -27,7 +26,7 @@ argument-hint: "[campbell | vogler] [dosya(lar)]"
 ## 2. Metni oku
 
 - Toplam metin yaklaşık 20.000 kelimenin altındaysa bölümleri kendin, sırasıyla ve baştan sona oku.
-- Daha uzunsa `yazihane-raporlari/` içinde güncel bir bölüm haritası (`bolum-haritasi-*.md`) varsa ve metin o tarihten beri değişmediyse onu kullan; yoksa `yayinevi-dosyasi` becerisindeki gibi `bolum-ozetcisi` ajanlarıyla çıkar. Agent aracı yoksa `editor` becerisindeki "Çalışma ortamı" kuralına uy.
+- Daha uzunsa erişilebilir güncel bölüm haritasını, kapsadığı metin sürümüyle karşılaştırarak kullan. Yoksa [yayınevi dosyası](../yayinevi-dosyasi/SKILL.md) becerisinin bölüm haritası adımını ve `../editor/references/okurlar/bolum-ozetcisi.md` rolünü kullan. Gerçek ajan desteği yoksa bölüm bölüm kendin çıkar. Okumadığın kısmı haritalama; haritanın yalnızca okunan bölümleri kapsadığını belirt.
 
 ## 3. Aşamaları eşle
 
@@ -62,7 +61,7 @@ En fazla üç mesele söyle. Kitap dosyasında yapısal olarak kapanmış sayıl
 
 ## 6. Raporu kaydet ve kısa sun
 
-Tam haritayı proje kökünde `yazihane-raporlari/yapi-haritasi-<campbell|vogler>-<YYYY-AA-GG>.md` dosyasına yaz:
+Tam haritayı ayrı çıktı olarak kaydet; yerel projede `yazihane-raporlari/yapi-haritasi-<campbell|vogler>-<YYYY-AA-GG>.md` kullan. Çıktı aracı yoksa haritayı sohbette sun. Biçim:
 
 ```
 # Yapı haritası — <Campbell | Vogler> · <eser> · <tarih>
@@ -77,7 +76,7 @@ Tam haritayı proje kökünde `yazihane-raporlari/yapi-haritasi-<campbell|vogler
 **Önündeki olasılıklar:** <yalnızca eser bitmemişse>
 ```
 
-Sohbette telefonda okunacak ölçüde bir özet ver: özet cümleleri, aşama adı ve durumdan oluşan kısa bir tablo, meseleler ve dosyanın yolu. Dosyaya yazılamayan ortamlarda (ör. claude.ai sohbeti) tam haritayı sohbette ver.
+Sohbette telefonda okunacak ölçüde bir özet ver: özet cümleleri, aşama adı ve durumdan oluşan kısa bir tablo, meseleler ve dosyanın yolu. Dosyaya yazılamayan ortamlarda (alt ajan desteği olmayan sohbetlerde) tam haritayı sohbette ver.
 
 ## Kurallar
 

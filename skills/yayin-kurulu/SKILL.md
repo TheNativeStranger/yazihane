@@ -1,20 +1,18 @@
 ---
 name: yayin-kurulu
-description: Yazıhane okur kurulunu toplar. Bir bölümü ya da dosyayı birbirinden bağımsız okurlara (beta okur, geliştirme editörü, satır editörü, redaktör, olgu denetçisi, yayınevi okuru) aynı anda okutur, sonra baş editör olarak raporlarını tek ve kısa bir karara indirir. İsteğe bağlı olarak bir ya da birkaç ustanın merceğini de kurula katar. Yazar "kurula okut", "bütün okurlar baksın", "yayına hazır mı" dediğinde kullan.
-argument-hint: "<dosya(lar)> [hızlı | okur adları] [usta:ad1,ad2]"
-disable-model-invocation: true
+description: Bir bölümü ya da dosyayı beta okur, geliştirme editörü, satır editörü, redaktör, olgu denetçisi ve yayınevi okuru açısından değerlendirir; baş editör olarak en fazla üç karara indirir. Ortam destekliyorsa okumaları bağımsız görevlerle, desteklemiyorsa aynı oturumda sırayla yapar. Yazar "kurula okut", "bütün okurlar baksın", "yayına hazır mı" dediğinde kullan.
 ---
 
 # Yayın Kurulu
 
-Önce `editor` becerisinin ilkelerini uygula (yüklü değilse yükle). Bu komutta sen **baş editörsün**: okurları toplar, raporlarını doğrular ve yazara tek bir karar metni sunarsın. Metni yeniden yazmazsın.
+Önce [editor](../editor/SKILL.md) becerisinin ilkelerini oku ve uygula. Bu komutta sen **baş editörsün**: okurları toplar, raporlarını doğrular ve yazara tek bir karar metni sunarsın. Metni yeniden yazmazsın.
 
-İstek: $ARGUMENTS
+İstek: yazarın bu görevde belirttiği metin ve istek
 
 ## 1. Metni ve kitap dosyasını belirle
 
-- Okunacak metin, isteğin içinde verilen dosya ya da dosyalardır. Dosya verilmemişse ve yazar metni sohbete yapıştırmışsa onu proje kökünde `yazihane-raporlari/metin-<YYYY-AA-GG>.md` dosyasına kaydet; okurlar sohbeti göremez, yalnızca dosya okur. İkisi de yoksa hangi metnin okunacağını tek soruyla sor.
-- Metin Word ya da ODT dosyasıysa `editor` becerisindeki "Metin dosyaları" kuralıyla düz metne çevir ve okurlara kopyaların yolunu ver; okurlar Word dosyası okuyamaz.
+- Okunacak metin, isteğin içinde verilen dosyalar, ekler veya yapıştırılmış metindir. Bağımsız okurlara görev vereceksen ve metin sohbetteyse erişebilecekleri ayrı bir okuma kopyası oluştur veya göreve metnin tamamını aktar. Böyle bir araç yoksa aynı oturumda sırayla oku. Hiç metin yoksa hangi metnin okunacağını tek soruyla sor.
+- Word ya da ODT doğrudan okunamıyorsa `editor` becerisindeki "Metin dosyaları" kuralını uygula; okurlara gerçekten erişebilecekleri metni ver.
 - Projede kitap dosyasını ara: `KITAP.md`, `kitap.md`, `.claude/KITAP.md`. Bulduğun yolu okurlara ilet.
 - Birden fazla sürüm varsa en son sürüm esastır; dosya adına güvenme.
 
@@ -27,19 +25,19 @@ disable-model-invocation: true
 - Kitap dosyasında yapısal olarak kapanmış sayılan bölümler için `gelistirme-editoru` yalnızca karakter doğruluğuna baksın; bunu ona söyle.
 - Metinde doğrulanacak alıntı, tarih ya da olgusal ayrıntı yoksa `olgu-denetcisi` kısa bir rapor döner; yine de çağır.
 
-## 3. Okurları aynı anda çalıştır
+## 3. Okurları çalıştır
 
-Seçilen okurların hepsini **tek mesajda, paralel** olarak Agent aracıyla başlat. Alt ajan türleri bu eklentinin ajanlarıdır (`yazihane:beta-okur` gibi; ortam ön eksiz adı kullanıyorsa `beta-okur`).
+Her seçilen okurun tam rolünü `../editor/references/okurlar/<okur-adı>.md` dosyasından oku. Bu dosyalar paket içi kaynaklardır; ChatGPT'ye özel ajan türleri kaydetmez. Alt ajan desteği ve oturum kuralları izin veriyorsa her rolü ayrı ve mümkünse paralel bir görev olarak başlat; göreve rol dosyasını da ver. Ajan desteği yoksa aynı kaynaklarla okumaları sırayla kendin yap ve bu okumaların tam bağımsız olmadığını rapor başında belirt. Claude Code'daki kayıtlı okur ajanları da aynı rol dosyalarını kullanır.
 
 Her okura aynı kısa görevi ver:
-- Okunacak dosyaların **mutlak yolları** ve varsa kitap dosyasının yolu.
+- Okunacak dosyaların erişilebilir yolları veya metnin tamamı; varsa kitap dosyası ve okurun rol dosyası.
 - Metnin ne olduğu (ör. "romanın 5. bölümü", "öykünün tamamı") ve yazarın varsa özel sorusu.
 - "Raporunu kendi tanımındaki rapor biçimiyle ver."
 - `usta-okuru` için ayrıca ustanın mercek dosyasının **mutlak yolu**.
 
 Okurlara birbirlerinin görüşlerini ya da senin ön yargını **verme**; kurulun değeri bağımsız okumalardır.
 
-**Agent aracı yoksa** (ör. claude.ai sohbeti) `editor` becerisindeki "Çalışma ortamı" kuralına göre okurları sırayla kendin oyna ve her birine aynı rapor biçimini uygula:
+**Alt ajan desteği yoksa** `editor` becerisindeki "Çalışma ortamı" kuralına göre, her rolün kaynak dosyasını kullanarak sırayla oku; kapsamları şöyledir:
 - **Beta okur:** yalnızca hissedilen okur tepkisi; düzeltme yok.
 - **Geliştirme editörü:** hikâye, yapı, sahne işlevi, karakter doğruluğu; en fazla üç mesele.
 - **Satır editörü:** ritim, tekrar, klişe, belirsiz özne; bütün itirazlar tek seferde.
@@ -59,7 +57,7 @@ Raporlar gelince:
 
 ## 5. Raporu kaydet ve kısa sun
 
-**Tam raporu** proje kökünde `yazihane-raporlari/<YYYY-AA-GG>-<metnin-kısa-adı>.md` dosyasına yaz:
+**Tam raporu** dosya çıktısı destekleniyorsa ayrı bir çıktı olarak kaydet; yerel projede `yazihane-raporlari/<YYYY-AA-GG>-<metnin-kısa-adı>.md` kullan. Yazma aracı yoksa raporu sohbette sun. Biçim:
 
 ```
 # Yayın Kurulu — <metin> · <tarih>
