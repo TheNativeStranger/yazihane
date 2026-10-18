@@ -1,0 +1,14 @@
+{
+  "name": "yazihane",
+  "description": "Türkçe yazan her yazar için roman yayın kurulu ve editör eklentisi.",
+  "owner": {
+    "name": "Ali Osman Akçaoğlu"
+  },
+  "plugins": [
+    {
+      "name": "yazihane",
+      "source": "./",
+      "description": "Yazıhane — Roman Yayın Kurulu (Literary Editor & Book Coach). Türkçe yazan her yazar için: altı bağımsız okurdan oluşan yayın kurulu, on iki ustanın merceği, TDK'ya göre imla ve süreklilik, yayınevi dosyası (sinopsis, tanıtım mektubu, arka kapak). Hiçbir kitaba bağlı değildir; yazarın yerine yazmaz."
+    }
+  ]
+}

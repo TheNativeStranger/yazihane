@@ -1,0 +1,23 @@
+{
+  "name": "yazihane",
+  "version": "0.5.0",
+  "description": "Yazıhane — Roman Yayın Kurulu (Literary Editor & Book Coach). Türkçe yazan her yazar için: altı bağımsız okurdan oluşan yayın kurulu, on iki ustanın merceği, TDK'ya göre imla ve süreklilik, yayınevi dosyası (sinopsis, tanıtım mektubu, arka kapak). Hiçbir kitaba bağlı değildir; yazarın yerine yazmaz.",
+  "author": {
+    "name": "Ali Osman Akçaoğlu"
+  },
+  "homepage": "https://github.com/isuiteapp/yazihane",
+  "repository": "https://github.com/isuiteapp/yazihane",
+  "license": "MIT",
+  "keywords": [
+    "roman",
+    "öykü",
+    "yayın kurulu",
+    "editör",
+    "TDK",
+    "imla",
+    "yazarlık",
+    "okur raporu",
+    "sinopsis",
+    "beta okur"
+  ]
+}
