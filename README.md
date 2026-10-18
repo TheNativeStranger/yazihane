@@ -56,6 +56,12 @@ Sonra dosyayı bir yayınevi okurunun gözüyle sınar: Mektup ve sinopsis onu �
 
 Belgelerin hepsi **taslaktır**. Yazıhane sizin hakkınızda, yayınevi hakkında ya da kitabınız için hiçbir bilgi, övgü ya da ödül uydurmaz; bilmediği her şeye yer tutucu bırakır ve sonunda bir "Sizden gerekenler" listesi verir. Tek bir parça da isteyebilirsiniz: `sinopsis`, `mektup`, `biyografi`, `arka-kapak`, `kapak-brief`, `bulten`. Bir yayınevinin adını verirseniz o yayınevinin dosya gönderim koşullarını da arar. Uzun romanlarda bölümler paralel okunur ve bir bölüm haritası çıkarılır; sinopsis bütün esere dayanır.
 
+## Yapı haritası
+
+`/yazihane:yapi-haritasi vogler` romanınızın yapısını Christopher Vogler'in on iki aşamalı **Yazarın Yolculuğu** şablonuna göre haritalar; `campbell` derseniz Joseph Campbell'ın on yedi aşamalı **Kahramanın Sonsuz Yolculuğu** kullanılır. Yalnızca siz istediğinizde çalışır.
+
+Her aşama için romanda nerede olduğunu (bölüm ve kısa alıntıyla) ve dört durumdan birini gösterir: **metinde var**, **örtük** (işlevini başka bir sahne görüyor), **metinde yok** ya da **bilerek farklı**. Harita bir reçete değildir: Bir aşamanın olmaması tek başına kusur sayılmaz. Yazıhane yalnızca o aşamanın işlevi hiçbir yerde karşılanmıyor ve bu okuru kaybettiriyorsa bunu bir sorun olarak söyler. Roman bitmemişse hikâyenin şu an hangi aşamada olduğunu gösterir; önündeki aşamaları reçete olarak değil, olasılık olarak sıralar.
+
 ## Tek tek çalışma modları
 
 | Komut | Ne yapar |
@@ -68,6 +74,7 @@ Belgelerin hepsi **taslaktır**. Yazıhane sizin hakkınızda, yayınevi hakkın
 | `/yazihane:iskele` | Yalnızca istenince, etiketli örnek metin |
 | `/yazihane:usta-mercegi` | Bir ya da birkaç ustanın merceğiyle okuma |
 | `/yazihane:yayinevi-dosyasi` | Yayınevine gönderilecek dosyayı hazırlar |
+| `/yazihane:yapi-haritasi` | Campbell ya da Vogler şablonuna göre yapı haritası |
 | `/yazihane:kitap-kur` | Eseriniz için kısa bir `KITAP.md` hazırlar |
 
 ## Kitap dosyası

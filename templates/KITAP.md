@@ -14,6 +14,7 @@ Bu dosya bir hatırlatmadır; karakter ya da dünya kitabı değildir. Metinle �
 - Söylenmeyen soru / proje cümlesi:
 
 ## Durum
+- Yapı kuramları (Campbell, Vogler): (istenirse konuşulur / hiç konuşulmasın)
 - Yapısal olarak kapanan bölümler: (bunlarda yalnızca kelime ve cümle düzeyinde çalışılır)
 
 ## Ses ve poetika
