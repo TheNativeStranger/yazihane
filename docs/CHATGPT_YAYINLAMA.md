@@ -27,6 +27,8 @@ Temiz bir sohbette eklentiyi etkinleştirip `evals/cases.md` içindeki doğrudan
 
 ## OpenAI'ye başvur
 
+Yüklemeden önce dört katalog bağlantısını tamamlayın: eklentiyi ve yayıncıyı tanıtan site, çalışan destek sayfası, gerçek veri kullanımını açıklayan yayımlanmış gizlilik politikası ve eklentiye uygulanan kullanım koşulları. Son iki bağlantı henüz pakete eklenmedi. Veri toplama, paylaşım, saklama, silme, destek ve varsa ücretlendirme kararları yayıncı tarafından doğrulanmalı; taslak metin yayımlanmış politika sayılmaz. Paket, mevcut simgenin 512 × 512 PNG sürümünü kullanır.
+
 1. [OpenAI eklenti başvuru rehberini](https://developers.openai.com/plugins/deploy/submission) açın ve oradaki **Plugins** bağlantısını izleyin. Eklentinin sahibi olacak organizasyon ve projeyi seçin.
 2. Başvuruyu yapacak hesap organizasyon sahibi olmalı veya **Apps Management Write** yetkisine sahip olmalıdır. Katalogdaki yayıncı adı için bireysel ya da işletme kimlik doğrulamasını tamamlayın.
 3. **Upload new or existing plugin → Upload plugin** ile üretilen ZIP'i yükleyin. Eski arayüzde yol **Create plugin → Skills only** olarak görünebilir. Yazıhane için MCP bağlantısı eklemeyin.

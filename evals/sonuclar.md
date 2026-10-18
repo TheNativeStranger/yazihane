@@ -6,9 +6,9 @@ Bu kayıt yerel paket ve model davranış denemeleridir. ChatGPT'ye marketplace 
 
 - On iki beceri, Beceri Oluşturucu'nun `quick_validate.py` denetiminden geçti.
 - `scripts/package_openai.py --check` manifestleri, kaynak yollarını ve simgeyi doğruladı.
-- Üretilen ZIP boş bir klasöre çıkarıldı: 46 çalışma dosyası, geçerli CRC, yinelenmeyen girişler. Claude ajan kayıtları ve geliştirici dosyaları arşivde yok.
+- İlk ZIP boş bir klasöre çıkarıldı. PNG simgeli son ZIP ayrıca incelendi: 47 çalışma dosyası, geçerli CRC, yinelenmeyen girişler. Claude ajan kayıtları ve geliştirici dosyaları arşivde yok.
 - Eksik simge, eksik TDK kaynağı, paket dışına işaret eden sembolik bağlantı, Claude değişkeni ve sürüm uyumsuzluğu ayrı geçici kopyalarda denendi; her biri reddedildi. Proje köküne eklenen örnek özel eser dosyası arşive girmedi.
-- SVG simge 512 × 512 olarak çizdirildi ve görsel olarak kontrol edildi.
+- SVG simge 512 × 512 PNG olarak dışa aktarıldı ve görsel olarak kontrol edildi. Son ZIP'teki iki simge alanının aynı geçerli PNG'ye yöneldiği, boyutunun 512 × 512 ve dosyanın 5 MiB altında olduğu doğrulandı.
 
 ## Davranış
 

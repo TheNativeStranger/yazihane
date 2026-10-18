@@ -25,8 +25,8 @@
           "Paylaştığım esere dayanarak yayınevine gönderilecek bir dosya taslağı hazırla."
         ],
         "brandColor": "#1C5145",
-        "composerIcon": "./assets/yazihane.svg",
-        "logo": "./assets/yazihane.svg"
+        "composerIcon": "./assets/yazihane.png",
+        "logo": "./assets/yazihane.png"
       },
       "publication": {
         "countries": [],

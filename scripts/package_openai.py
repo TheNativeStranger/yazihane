@@ -5,6 +5,7 @@ import argparse
 import json
 from pathlib import Path
 import re
+import struct
 import sys
 import xml.etree.ElementTree as ET
 import zipfile
@@ -80,8 +81,16 @@ def validate(root, paths):
         if path.suffix == ".svg":
             svg = ET.parse(path).getroot()
             width, height = float(svg.attrib["width"]), float(svg.attrib["height"])
-            if width != height or width < 48:
-                raise ValueError(f"Icon must be square and at least 48px: {path.name}")
+        elif path.suffix == ".png":
+            data = path.read_bytes()
+            if len(data) < 33 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
+                raise ValueError(f"Invalid PNG icon: {path.name}")
+            width, height = struct.unpack(">II", data[16:24])
+        else:
+            raise ValueError(f"Icon must be SVG or PNG: {path.name}")
+        minimum = 256 if field == "logo" else 48
+        if width != height or width < minimum:
+            raise ValueError(f"Icon must be square and at least {minimum}px: {path.name}")
     for translation in extension.get("publication", {}).get("translations", {}).values():
         for field, maximum in (("subtitle", 30), ("description", 4000)):
             value = translation.get(field)
