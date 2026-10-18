@@ -143,6 +143,8 @@ Claude'daki `/yazihane:...` yazımı bütün ortamlarda kayıtlı bir slash komu
 
 ## Kullanım maliyeti
 
+Yazıhane'nin bu sürümü ücretsizdir; yayıncı eklenti kullanımı için ücret almaz. Eklenti içinde satın alma, ödeme veya abonelik akışı bulunmaz.
+
 Yayın kurulu aynı metni birden fazla açıdan, yayınevi dosyası ise bütün eseri okur. Bunlar tek moda göre daha fazla model kullanımı gerektirebilir; kota ve ücret kullanılan hizmetin planına bağlıdır. Eklentinin kendi haricî API anahtarı veya sunucusu yoktur. Daha kısa bir okuma için tek modları (`okur`, `satir`, `imla`) ya da `hızlı` kurulu seçebilirsiniz.
 
 ## Geri bildirim
@@ -152,6 +154,8 @@ Hata bildirmek ya da öneride bulunmak için GitHub'daki [Issues](https://github
 ## Lisans
 
 MIT. Yazıhane'yi kullanabilir, değiştirebilir ve paylaşabilirsiniz; yalnızca lisans metnini ve yazarın adını koruyun. Ayrıntı için [LICENSE](LICENSE) dosyasına bakın.
+
+[Gizlilik Politikası](docs/PRIVACY.md) · [Kullanım Koşulları](docs/TERMS.md)
 
 ## In English
 
