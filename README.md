@@ -2,6 +2,8 @@
 
 *Literary Editor & Book Coach*
 
+Yayıncı: Ali Osman Akçaoğlu, bireysel geliştirici.
+
 Yazıhane, Türkçe yazan her yazar için hazırlanmış bir editör eklentisidir. Romanınızı ya da öykünüzü bir yayınevinin yayın kurulu gibi okur: altı farklı okur bakışını bir araya getirir, bir baş editör görüşleri doğrulayıp en fazla üç karara indirir. Ortam bağımsız alt ajanları destekliyorsa okumalar ayrı görevlerle, desteklemiyorsa aynı oturumda sırayla yapılır ve bu belirtilir. Ayrıca ustaların merceğiyle okur, imla ve süreklilik denetler, yayınevine gidecek dosyanızı hazırlar.
 
 **0.7.0:** Claude kurulumu yanında ChatGPT ve Codex için taşınabilir, yalnızca becerilerden oluşan OpenAI paketi hazırlanabilir. OpenAI dizinine başvuru ve yayımlama henüz bu depodaki dosyalarla tamamlanmış sayılmaz. [ChatGPT yayımlama rehberi](docs/CHATGPT_YAYINLAMA.md).

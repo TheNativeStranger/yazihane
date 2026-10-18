@@ -27,7 +27,7 @@ Temiz bir sohbette eklentiyi etkinleştirip `evals/cases.md` içindeki doğrudan
 
 ## OpenAI'ye başvur
 
-Yüklemeden önce dört katalog bağlantısını tamamlayın: eklentiyi ve yayıncıyı tanıtan site, çalışan destek sayfası, gerçek veri kullanımını açıklayan yayımlanmış gizlilik politikası ve eklentiye uygulanan kullanım koşulları. Son iki bağlantı henüz pakete eklenmedi. Veri toplama, paylaşım, saklama, silme, destek ve varsa ücretlendirme kararları yayıncı tarafından doğrulanmalı; taslak metin yayımlanmış politika sayılmaz. Paket, mevcut simgenin 512 × 512 PNG sürümünü kullanır.
+Dört katalog bağlantısı kök manifestte tanımlıdır: yayıncıyı ve eklentiyi tanıtan README, GitHub Issues destek sayfası, [Gizlilik Politikası](PRIVACY.md) ve [Kullanım Koşulları](TERMS.md). Sayfalar herkese açık `codex/chatgpt-plugin` dalında yayımlanmıştır. Bu dalı kaldırmadan önce katalog bağlantılarını kalıcı yeni konumlarına taşıyın. Yayıncı bireysel geliştirici Ali Osman Akçaoğlu'dur; 0.7.0 sürümü ücretsizdir ve yayıncı kullanıcı metinlerini ayrıca toplamaz, saklamaz veya paylaşmaz. Bu açıklama kullanılan yapay zekâ platformunun işlemesini veya isteğe bağlı web sorgularını kapsam dışı bırakmaz; ayrıntılar gizlilik politikasındadır. Paket, mevcut simgenin 512 × 512 PNG sürümünü kullanır.
 
 1. [OpenAI eklenti başvuru rehberini](https://developers.openai.com/plugins/deploy/submission) açın ve oradaki **Plugins** bağlantısını izleyin. Eklentinin sahibi olacak organizasyon ve projeyi seçin.
 2. Başvuruyu yapacak hesap organizasyon sahibi olmalı veya **Apps Management Write** yetkisine sahip olmalıdır. Katalogdaki yayıncı adı için bireysel ya da işletme kimlik doğrulamasını tamamlayın.

@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 import struct
 import sys
+from urllib.parse import urlsplit
 import xml.etree.ElementTree as ET
 import zipfile
 
@@ -67,6 +68,16 @@ def validate(root, paths):
             raise ValueError(f"Invalid listing field: {field} (limit {maximum})")
     if not interface.get("category"):
         raise ValueError("A listing category is required")
+    for field in ("websiteURL", "supportURL", "privacyPolicyURL", "termsOfServiceURL"):
+        value = interface.get(field)
+        if not isinstance(value, str) or not value.strip() or len(value) > 1024:
+            raise ValueError(f"A published listing URL is required: {field}")
+        url = urlsplit(value)
+        if (
+            url.scheme != "https" or not url.hostname or url.username is not None
+            or url.password is not None or any(c.isspace() for c in value)
+        ):
+            raise ValueError(f"Use an HTTPS listing URL without credentials: {field}")
     prompts = interface.get("defaultPrompt", [])
     if not isinstance(prompts, list) or len(prompts) > 3 or any(
         not isinstance(prompt, str) or not prompt.strip() or len(prompt) > 128
