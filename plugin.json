@@ -1,0 +1,62 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "yazihane",
+  "version": "0.8.0",
+  "description": "Türkçe kurgu için tek komutla yayın kurulu; iç içe Campbell–Vogler saatleri, kelime ve tekrar ölçümleri, etkileşimli dashboard ve PDF.",
+  "author": {
+    "name": "Ali Osman Akçaoğlu"
+  },
+  "homepage": "https://github.com/isuiteapp/yazihane",
+  "repository": "https://github.com/isuiteapp/yazihane",
+  "license": "MIT",
+  "keywords": [
+    "Turkish",
+    "fiction",
+    "editor",
+    "roman",
+    "öykü",
+    "TDK",
+    "sinopsis"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Yazıhane",
+        "shortDescription": "Fiction editor for Turkish",
+        "longDescription": "Yazıhane reviews Turkish novels and stories while preserving the writer's voice. One full editorial-board command combines editor, adviser, beta reader, publisher simulation, spelling, continuity, line review and structure mapping, plus three default literary lenses: Tolstoy, Ahmet Haşim and Sabahattin Ali. A short, labeled scaffold may demonstrate a technique without becoming manuscript canon. The chief editor presents at most three joint decisions.\n\nThe Dashboard workflow creates nested Campbell (17-stage) and Vogler (12-stage) clocks, evidence-based current positions, chapter word counts, repetition candidates, review cards, a self-contained interactive HTML and a vector PDF. Green means working, yellow revision, red missing function or not yet written, and gray draft, notes, raw text or unreviewed material. Models do not override the manuscript. Counts are deterministic; editorial judgments are separate.\n\nPython scripts run locally in the AI host when its execution tools are available. PDF output requires ReportLab. The package has no MCP server, external account, API key, publisher backend or network calls in its dashboard scripts. Host tools determine file output, web verification and independent-reader support; sequential readings are disclosed when independent tasks are unavailable. Unread chapters are not assessed.\n\nThis version is free from the publisher; host plans and usage limits still apply.",
+        "developerName": "Ali Osman Akçaoğlu",
+        "category": "Productivity",
+        "capabilities": [
+          "Read manuscripts",
+          "Write editorial reports"
+        ],
+        "websiteURL": "https://github.com/isuiteapp/yazihane/blob/codex/chatgpt-plugin/README.md",
+        "supportURL": "https://github.com/isuiteapp/yazihane/issues",
+        "privacyPolicyURL": "https://github.com/isuiteapp/yazihane/blob/codex/chatgpt-plugin/docs/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/isuiteapp/yazihane/blob/codex/chatgpt-plugin/docs/TERMS.md",
+        "defaultPrompt": [
+          "İlk dört bölümü yayın kurulu olarak değerlendir; dashboard ve PDF de hazırla.",
+          "Dashboard: Campbell ve Vogler saatlerinde nerede olduğumu, kelime ve tekrar sayılarını göster.",
+          "Bu sahneyi Tolstoy, Ahmet Haşim ve Sabahattin Ali mercekleriyle değerlendir."
+        ],
+        "brandColor": "#1C5145",
+        "composerIcon": "./assets/yazihane.png",
+        "logo": "./assets/yazihane.png"
+      },
+      "review": {
+        "commerce": false,
+        "commerce_description": "The publisher charges no fee for Yazıhane 0.8.0. No checkout, subscription or payment processing is included. Host plans and usage limits apply."
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "One-command editorial board with the three selected literary lenses, local word/repetition metrics, nested Campbell/Vogler dashboard and PDF export. Private installation and public publication remain separate.",
+        "translations": {
+          "tr-TR": {
+            "subtitle": "Romanınız için yayın kurulu",
+            "description": "Tek komutla editör, danışman, okur, yayınevi simülasyonu, satır, imla, süreklilik, olgu, iki yapı haritası ve etiketli iskele. Toplu kurulda yalnız Tolstoy, Ahmet Haşim ve Sabahattin Ali mercekleri. İç içe Campbell/Vogler saatleri, kanıtlı konum ve renkler, gerçek bölüm kelime sayıları, tekrar adayları; etkileşimli HTML ve PDF çıktısı. Yazarın sesi ve kapsam sınırı korunur. Dosya/Python ve bağımsız görev desteği kullanılan ortama bağlıdır. Bu sürüm ücretsizdir; ortamın kendi plan sınırları geçerlidir."
+          }
+        }
+      }
+    }
+  }
+}

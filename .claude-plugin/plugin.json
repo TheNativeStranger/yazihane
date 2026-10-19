@@ -1,7 +1,7 @@
 {
   "name": "yazihane",
-  "version": "0.6.0",
-  "description": "Yazıhane — Roman Yayın Kurulu (Literary Editor & Book Coach). Türkçe yazan her yazar için: altı bağımsız okurdan oluşan yayın kurulu, on iki ustanın merceği, TDK'ya göre imla ve süreklilik, yayınevi dosyası (sinopsis, tanıtım mektubu, arka kapak) ve Campbell / Vogler yapı haritası. Hiçbir kitaba bağlı değildir; yazarın yerine yazmaz.",
+  "version": "0.8.0",
+  "description": "Türkçe kurgu için yayın kurulu, üç varsayılan usta merceği, iç içe Campbell/Vogler dashboard saatleri, kelime ve tekrar ölçümleri, HTML ve PDF.",
   "author": {
     "name": "Ali Osman Akçaoğlu"
   },

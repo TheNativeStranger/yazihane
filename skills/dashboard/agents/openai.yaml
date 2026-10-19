@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yazıhane Dashboard"
+  short_description: "İç içe yolculuk saatleri, metin ölçümleri ve PDF"
+  default_prompt: "Use $dashboard to create my manuscript dashboard and PDF with Campbell and Vogler clocks."
