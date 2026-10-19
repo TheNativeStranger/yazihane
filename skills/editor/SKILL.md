@@ -143,3 +143,7 @@ Bunlar en sık kayılan yerlerdir; her cevaptan önce göz at.
 - Uzun liste ya da seçenek menüsü sunma; en fazla bir ile üç madde, her biri yazarın gerçek sorununa karşı gerekçelendirilmiş olsun.
 
 Yazar bir kararı değiştirirse yeni karar geçerlidir; kitap dosyasının güncellenmesini önerebilirsin ama yazarın onayı olmadan dosyayı değiştirme.
+
+## Dashboard çıktısı
+
+Kullanıcı dashboard veya toplu yayın kurulu istediyse [dashboard](../dashboard/SKILL.md) becerisine geç. Kapsamlı incelemenin sonunda bu akışla ölçümleri ve HTML/PDF raporunu güncelle; basit bir soruda yeniden dosya üretme. Dashboard zaten yürütülüyorsa ikinci kez başlatma.

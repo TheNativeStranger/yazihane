@@ -13,7 +13,7 @@ python3 scripts/package_openai.py --check
 python3 scripts/package_openai.py
 ```
 
-Çıktı: `dist/yazihane-openai-0.7.0.zip`.
+Çıktı: `dist/yazihane-openai-0.8.0.zip`.
 
 Betik manifest sürümlerini, katalog metni sınırlarını, beceri başlıklarını, paket içi yolları ve simgeyi denetler. Arşive yalnızca `plugin.json`, `LICENSE`, `skills/`, `templates/` ve `assets/` girer. Git geçmişi, Claude ajan kayıtları, geliştirici betikleri, değerlendirme belgeleri ve kullanıcı eserleri dağıtımın parçası değildir. Kullanıcı metinlerini bu kaynak klasörlerine koymayın.
 
@@ -27,7 +27,7 @@ Temiz bir sohbette eklentiyi etkinleştirip `evals/cases.md` içindeki doğrudan
 
 ## OpenAI'ye başvur
 
-Dört katalog bağlantısı kök manifestte tanımlıdır: yayıncıyı ve eklentiyi tanıtan README, GitHub Issues destek sayfası, [Gizlilik Politikası](PRIVACY.md) ve [Kullanım Koşulları](TERMS.md). Sayfalar herkese açık `codex/chatgpt-plugin` dalında yayımlanmıştır. Bu dalı kaldırmadan önce katalog bağlantılarını kalıcı yeni konumlarına taşıyın. Yayıncı bireysel geliştirici Ali Osman Akçaoğlu'dur; 0.7.0 sürümü ücretsizdir ve yayıncı kullanıcı metinlerini ayrıca toplamaz, saklamaz veya paylaşmaz. Bu açıklama kullanılan yapay zekâ platformunun işlemesini veya isteğe bağlı web sorgularını kapsam dışı bırakmaz; ayrıntılar gizlilik politikasındadır. Paket, mevcut simgenin 512 × 512 PNG sürümünü kullanır.
+Dört katalog bağlantısı kök manifestte tanımlıdır: yayıncıyı ve eklentiyi tanıtan README, GitHub Issues destek sayfası, [Gizlilik Politikası](PRIVACY.md) ve [Kullanım Koşulları](TERMS.md). Sayfalar herkese açık `codex/chatgpt-plugin` dalında yayımlanmıştır. Bu dalı kaldırmadan önce katalog bağlantılarını kalıcı yeni konumlarına taşıyın. Yayıncı bireysel geliştirici Ali Osman Akçaoğlu'dur; 0.8.0 sürümü ücretsizdir ve yayıncı kullanıcı metinlerini ayrıca toplamaz, saklamaz veya paylaşmaz. Bu açıklama kullanılan yapay zekâ platformunun işlemesini veya isteğe bağlı web sorgularını kapsam dışı bırakmaz; ayrıntılar gizlilik politikasındadır. Paket, mevcut simgenin 512 × 512 PNG sürümünü kullanır.
 
 1. [OpenAI eklenti başvuru rehberini](https://developers.openai.com/plugins/deploy/submission) açın ve oradaki **Plugins** bağlantısını izleyin. Eklentinin sahibi olacak organizasyon ve projeyi seçin.
 2. Başvuruyu yapacak hesap organizasyon sahibi olmalı veya **Apps Management Write** yetkisine sahip olmalıdır. Katalogdaki yayıncı adı için bireysel ya da işletme kimlik doğrulamasını tamamlayın.

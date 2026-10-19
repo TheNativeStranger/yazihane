@@ -1,0 +1,151 @@
+{
+  "campbell": [
+    {
+      "id": 1,
+      "name": "Maceraya Çağrı",
+      "function": "Kahramanı bildiği dünyadan koparan olay ya da haber."
+    },
+    {
+      "id": 2,
+      "name": "Çağrının Reddi",
+      "function": "Kahramanın direnmesi, ertelemesi, kaçınması."
+    },
+    {
+      "id": 3,
+      "name": "Doğaüstü Yardım",
+      "function": "Kahramana yol gösteren koruyucu bir figür ya da tılsım. Romanda bir yardımcı, bir rastlantı, bir işaret olabilir."
+    },
+    {
+      "id": 4,
+      "name": "İlk Eşiğin Aşılması",
+      "function": "Bilinen dünyanın sınırını geçmek."
+    },
+    {
+      "id": 5,
+      "name": "Balinanın Karnı",
+      "function": "Kahramanın eski benliğinin \"öldüğü\", bilinmeyenin içine düştüğü an; ayrılığın tamamlanması."
+    },
+    {
+      "id": 6,
+      "name": "Sınavlar Yolu",
+      "function": "Birbirini izleyen sınavlar ve yenilgiler."
+    },
+    {
+      "id": 7,
+      "name": "Tanrıçayla Karşılaşma",
+      "function": "Koşulsuz sevgiyle ya da bütünlük duygusuyla karşılaşma. Cinsiyete bağlı okunmak zorunda değil."
+    },
+    {
+      "id": 8,
+      "name": "Ayartıcı Olarak Kadın",
+      "function": "Kahramanı yolundan saptıran çekim. Campbell'ın dönemine ait bir adlandırma; bugün daha çok \"ayartı\" ya da \"yoldan saptıran çekim\" olarak okunur."
+    },
+    {
+      "id": 9,
+      "name": "Babayla Barışma",
+      "function": "Kahramanın üzerinde güç sahibi olanla (baba, otorite, kader) yüzleşmesi ve onunla barışması."
+    },
+    {
+      "id": 10,
+      "name": "Tanrılaşma",
+      "function": "Bilinçte genişleme; kahramanın kendini aşan bir anlayışa varması."
+    },
+    {
+      "id": 11,
+      "name": "Nihai Lütuf",
+      "function": "Yolculuğun amacı olan kazanım."
+    },
+    {
+      "id": 12,
+      "name": "Dönüşün Reddi",
+      "function": "Kahramanın yeni dünyadan dönmek istememesi."
+    },
+    {
+      "id": 13,
+      "name": "Sihirli Kaçış",
+      "function": "Kazanımla birlikte kaçış; bazen kovalanma."
+    },
+    {
+      "id": 14,
+      "name": "Dışarıdan Kurtarış",
+      "function": "Kahramanın dönüşüne dışarıdan gelen yardım."
+    },
+    {
+      "id": 15,
+      "name": "Dönüş Eşiğinin Aşılması",
+      "function": "Kazanılanı gündelik dünyaya taşımanın güçlüğü."
+    },
+    {
+      "id": 16,
+      "name": "İki Dünyanın Efendisi",
+      "function": "İç dünya ile dış dünya arasında dengede durabilmek."
+    },
+    {
+      "id": 17,
+      "name": "Yaşama Özgürlüğü",
+      "function": "Geçmişin yükünden ve ölüm korkusundan kurtulmuş, şimdide yaşayabilen kahraman."
+    }
+  ],
+  "vogler": [
+    {
+      "id": 1,
+      "name": "Olağan Dünya",
+      "function": "Kahramanın değişmeden önceki hayatı; okur onun eksikliğini, yarasını, alışkanlıklarını görür."
+    },
+    {
+      "id": 2,
+      "name": "Maceraya Çağrı",
+      "function": "Olağan dünyayı bozan olay, haber ya da fırsat."
+    },
+    {
+      "id": 3,
+      "name": "Çağrının Reddi",
+      "function": "Kahraman korkar, direnir ya da erteler; risk görünür olur."
+    },
+    {
+      "id": 4,
+      "name": "Akıl Hocasıyla Karşılaşma",
+      "function": "Kahramana bilgi, cesaret ya da bir araç veren kişi ya da şey."
+    },
+    {
+      "id": 5,
+      "name": "İlk Eşiğin Aşılması",
+      "function": "Geri dönüşü zor ilk karar; kahraman yeni dünyaya adım atar."
+    },
+    {
+      "id": 6,
+      "name": "Sınavlar, Müttefikler, Düşmanlar",
+      "function": "Yeni dünyanın kuralları öğrenilir; kimin dost, kimin düşman olduğu belli olur."
+    },
+    {
+      "id": 7,
+      "name": "En Derin Mağaraya Yaklaşma",
+      "function": "Asıl yüzleşmeye hazırlık; gerilim yoğunlaşır."
+    },
+    {
+      "id": 8,
+      "name": "Büyük Sınav",
+      "function": "Kahramanın en büyük korkusuyla ya da ölümle (gerçek ya da simgesel) yüzleştiği kriz."
+    },
+    {
+      "id": 9,
+      "name": "Ödül",
+      "function": "Sınavın ardından kazanılan şey."
+    },
+    {
+      "id": 10,
+      "name": "Dönüş Yolu",
+      "function": "Olağan dünyaya dönme kararı ve bedeli; sonuçlar peşini bırakmaz."
+    },
+    {
+      "id": 11,
+      "name": "Diriliş",
+      "function": "Son ve en yüksek sınav; kahraman değiştiğini bir seçimle kanıtlar."
+    },
+    {
+      "id": 12,
+      "name": "İksirle Dönüş",
+      "function": "Kahraman olağan dünyaya, kendisine ya da başkalarına iyi gelecek bir şeyle döner."
+    }
+  ]
+}

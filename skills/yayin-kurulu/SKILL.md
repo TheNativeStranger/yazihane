@@ -3,6 +3,8 @@ name: yayin-kurulu
 description: Bir bölümü ya da dosyayı beta okur, geliştirme editörü, satır editörü, redaktör, olgu denetçisi ve yayınevi okuru açısından değerlendirir; baş editör olarak en fazla üç karara indirir. Ortam destekliyorsa okumaları bağımsız görevlerle, desteklemiyorsa aynı oturumda sırayla yapar. Yazar "kurula okut", "bütün okurlar baksın", "yayına hazır mı" dediğinde kullan.
 ---
 
+**Toplu çağrı:** “Yayın kurulu olarak değerlendir” isteği, [dashboard](../dashboard/SKILL.md) akışıyla bu rollerin yanında iki yapı haritasını, yalnız Tolstoy/Ahmet Haşim/Sabahattin Ali merceklerini, etiketli kısa iskeleyi ve HTML/PDF raporunu birleştirir. Dashboard zaten yürütülüyorsa tekrar başlatma; burada yalnız istenen rol okumalarını tamamla. `hızlı` veya tek mod isteğinde açık kapsam önceliklidir.
+
 # Yayın Kurulu
 
 Önce [editor](../editor/SKILL.md) becerisinin ilkelerini oku ve uygula. Bu komutta sen **baş editörsün**: okurları toplar, raporlarını doğrular ve yazara tek bir karar metni sunarsın. Metni yeniden yazmazsın.

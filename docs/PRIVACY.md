@@ -1,6 +1,6 @@
 # Yazıhane — Gizlilik Politikası / Privacy Policy
 
-Son güncelleme: 19 Ekim 2026. Kapsam: Yazıhane 0.7.0, ChatGPT ve Codex için yalnızca becerilerden oluşan paket. Yayıncı: Ali Osman Akçaoğlu, bireysel geliştirici.
+Son güncelleme: 19 Ekim 2026. Kapsam: Yazıhane 0.8.0, ChatGPT ve Codex için beceriler ve yerel dashboard yardımcıları paketi. Yayıncı: Ali Osman Akçaoğlu, bireysel geliştirici.
 
 ## Eseriniz ve eklentinin yapısı
 
@@ -15,6 +15,10 @@ Bu açıklama, kullandığınız platformun veri işlemediği anlamına gelmez. 
 Olgu denetimi veya yayınevi araştırması sırasında ortamın web araçları kullanılabilir. Arama sorguları metinden kısa ifadeler içerebilir; sorguları arama sağlayıcıları da işleyebilir. Web araştırması yapılmasını istemiyorsanız bunu isteğinizde belirtin. Kaynak doğrulaması bu durumda sınırlı kalabilir.
 
 Dosya çıktısı istediğinizde raporlar, ortamın izin verdiği dosya veya çıktı alanına kaydedilir. Yerel kullanımda `yazihane-raporlari/` ve `yayinevi-dosyasi/` klasörleri kullanılabilir. Bunlar yayıncının sunucusunda tutulmaz.
+
+## Dashboard ölçümleri
+
+Dashboard yardımcıları, kaynak metni kullandığınız ortamda yerel Python ile okur; kelime ve tekrar ölçümlerini hesaplar, kanıt alıntılarını doğrular, HTML ve PDF üretir. Bu betikler ağ isteği yapmaz. Ara JSON dosyaları kaynak metni içerebilir; rapor HTML/PDF dosyalarında yorumlar ve seçilmiş kısa alıntılar yer alır. Raporlar ortamın izin verdiği çıktı alanında veya destekleniyorsa hesabınızın dosya alanında saklanır. Özgün eser değiştirilmez; yayıncıya kopya gönderilmez.
 
 ## Saklama ve kullanıcı kontrolleri
 
@@ -36,4 +40,4 @@ Eklentinin veri akışı değişirse bu sayfa, sürüm ve tarih bilgisiyle günc
 
 ## English summary
 
-Yazıhane 0.7.0 is a skills-only plugin published by individual developer Ali Osman Akçaoğlu. It has no publisher-operated server, account system, payment service, analytics or tracking code. The publisher does not receive, retain or independently share manuscripts or chats through plugin use. Your AI host processes your inputs and outputs under its own terms, privacy policy and settings. Optional host web research may include short manuscript excerpts in search queries; you can ask for no web research. Manage chats, files and saved reports through the host or their storage location. Uninstalling the plugin does not delete those copies. GitHub support issues are public; information you post there is visible to the publisher, GitHub and other visitors and is governed by GitHub's privacy practices. Use the linked support page for plugin questions and the relevant provider's controls for provider-held data.
+Yazıhane 0.8.0 is a skills plugin with local Python dashboard helpers published by individual developer Ali Osman Akçaoğlu. It has no publisher-operated server, account system, payment service, analytics or tracking code. The publisher does not receive, retain or independently share manuscripts or chats through plugin use. Dashboard helpers make no network requests; intermediate measurements can contain source text, and HTML/PDF reports contain selected evidence excerpts. Your AI host processes your inputs and outputs under its own terms, privacy policy and settings. Optional host web research may include short manuscript excerpts in search queries; you can ask for no web research. Manage chats, files and saved reports through the host or their storage location. Uninstalling the plugin does not delete those copies. GitHub support issues are public; information you post there is visible to the publisher, GitHub and other visitors and is governed by GitHub's privacy practices. Use the linked support page for plugin questions and the relevant provider's controls for provider-held data.

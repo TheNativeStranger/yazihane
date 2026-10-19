@@ -1,10 +1,12 @@
 # Yazıhane — Kullanım Koşulları / Terms of Use
 
-Son güncelleme: 19 Ekim 2026. Kapsam: Yazıhane 0.7.0. Yayıncı: Ali Osman Akçaoğlu, bireysel geliştirici.
+Son güncelleme: 19 Ekim 2026. Kapsam: Yazıhane 0.8.0. Yayıncı: Ali Osman Akçaoğlu, bireysel geliştirici.
 
 ## Hizmetin kapsamı
 
-Yazıhane, Türkçe roman ve öyküler için yapay zekâ destekli editoryal değerlendirme talimatları, kaynaklar ve şablonlar sağlar. Yayın kurulu okuması, edebî mercekler, imla ve süreklilik denetimi, yayınevi dosyası taslağı ve istek üzerine yapı haritası hazırlamaya yardımcı olur.
+Yazıhane, Türkçe roman ve öyküler için yapay zekâ destekli editoryal değerlendirme talimatları, kaynaklar, şablonlar ve yerel dashboard betikleri sağlar. Yayın kurulu okuması, edebî mercekler, imla ve süreklilik denetimi, yayınevi dosyası taslağı ve istek üzerine yapı haritası hazırlamaya yardımcı olur.
+
+Dashboard, yerel Python araçlarıyla ölçüm ve HTML/PDF oluşturma desteğine bağlıdır. PDF için ReportLab gerekir. Renk ve tekrar sıklığı tek başına editoryal kusur kararı değildir.
 
 Bağımsız okurlar, dosya okuma ve kaydetme, web doğrulaması gibi özellikler kullanılan ortamın araçlarına ve izinlerine bağlıdır. Bağımsız görev desteği yoksa okur bakışları aynı oturumda sırayla uygulanır ve bu sınır belirtilir. Eklenti, erişemediği bölümleri okumuş veya doğrulayamadığı bir bilgiyi doğrulamış sayılmaz.
 
@@ -24,7 +26,7 @@ Veri akışı ve kullanıcı kontrolleri [Yazıhane Gizlilik Politikası](PRIVAC
 
 ## Açık kaynak lisansı
 
-Depodaki yazılım, talimatlar ve birlikte verilen kaynakların kullanımı, değiştirilmesi ve dağıtımı [MIT lisansına](../LICENSE) tabidir. Lisans bildirimi ve telif bilgisi korunmalıdır. Yazılımın olduğu gibi sunulmasına ilişkin hükümler lisans metninde yer alır. Bu sayfa, MIT lisansıyla verilen hakları daraltmaz.
+Depodaki yazılım, talimatlar ve birlikte verilen kaynakların kullanımı, değiştirilmesi ve dağıtımı [MIT lisansına](../LICENSE) tabidir; paketlenen DejaVu fontları kendi ekli lisanslarıyla dağıtılır. Lisans bildirimi ve telif bilgisi korunmalıdır. Yazılımın olduğu gibi sunulmasına ilişkin hükümler lisans metninde yer alır. Bu sayfa, MIT lisansıyla verilen hakları daraltmaz.
 
 ## Destek ve güncellemeler
 
@@ -32,4 +34,4 @@ Hata ve öneriler için [GitHub Issues](https://github.com/isuiteapp/yazihane/is
 
 ## English summary
 
-Yazıhane 0.7.0, by individual developer Ali Osman Akçaoğlu, provides AI-assisted editorial workflows for Turkish fiction. The publisher charges no fee for this version, and the plugin contains no checkout or subscription flow. Your AI host's plan, usage limits and charges still apply. Host tools determine available file, web and independent-reader capabilities. Outputs are drafts for the writer to check and do not promise publication or acceptance. The plugin requests no transfer of manuscript rights to the publisher. Source files are governed by the repository's MIT license, which these terms do not restrict. The linked privacy policy explains data handling; host terms apply separately. Support is provided through the public GitHub Issues page.
+Yazıhane 0.8.0, by individual developer Ali Osman Akçaoğlu, provides AI-assisted editorial workflows for Turkish fiction. The publisher charges no fee for this version, and the plugin contains no checkout or subscription flow. Your AI host's plan, usage limits and charges still apply. Host tools determine available file, web and independent-reader capabilities. Outputs are drafts for the writer to check and do not promise publication or acceptance. The plugin requests no transfer of manuscript rights to the publisher. Source files are governed by the repository's MIT license, which these terms do not restrict. The linked privacy policy explains data handling; host terms apply separately. Support is provided through the public GitHub Issues page.

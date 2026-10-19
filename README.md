@@ -6,7 +6,7 @@ Yayıncı: Ali Osman Akçaoğlu, bireysel geliştirici.
 
 Yazıhane, Türkçe yazan her yazar için hazırlanmış bir editör eklentisidir. Romanınızı ya da öykünüzü bir yayınevinin yayın kurulu gibi okur: altı farklı okur bakışını bir araya getirir, bir baş editör görüşleri doğrulayıp en fazla üç karara indirir. Ortam bağımsız alt ajanları destekliyorsa okumalar ayrı görevlerle, desteklemiyorsa aynı oturumda sırayla yapılır ve bu belirtilir. Ayrıca ustaların merceğiyle okur, imla ve süreklilik denetler, yayınevine gidecek dosyanızı hazırlar.
 
-**0.7.0:** Claude kurulumu yanında ChatGPT ve Codex için taşınabilir, yalnızca becerilerden oluşan OpenAI paketi hazırlanabilir. OpenAI dizinine başvuru ve yayımlama henüz bu depodaki dosyalarla tamamlanmış sayılmaz. [ChatGPT yayımlama rehberi](docs/CHATGPT_YAYINLAMA.md).
+**0.8.0:** Tek komutla genişletilmiş yayın kurulu, iç içe Campbell/Vogler dashboard saatleri, yerel kelime ve tekrar ölçümleri, HTML ve PDF çıktısı. ChatGPT/Codex paketi, becerileri ve onların yerel yardımcı betiklerini içerir. OpenAI dizinine başvuru ve yayımlama henüz bu depodaki dosyalarla tamamlanmış sayılmaz. [ChatGPT yayımlama rehberi](docs/CHATGPT_YAYINLAMA.md).
 
 **Yazıhane yazarın yerine yazmaz.** Değerlendirir, gösterir, önerir. Eserin son metni her zaman sizin cümlelerinizdir; sesiniz korunur.
 
@@ -23,7 +23,7 @@ Komut yazmak zorunda değilsiniz: "Şu bölüme bir bakar mısın?" demeniz de y
 
 ## Yayın kurulu
 
-Claude'da `/yazihane:yayin-kurulu bolum-05.docx`, ChatGPT'de ise Yazıhane seçiliyken "Bu bölümü yayın kuruluna okut" isteği altı okur bakışını çalıştırır. Bağımsız görevler kullanılabildiğinde okurlar birbirinin görüşünü görmez. Baş editör her iddiayı metinde doğrular, aynı meseleleri birleştirir, okurların ayrıştığı yerleri "karar sizin" diye iki taraflı gösterir ve en fazla üç karar çıkarır. Dosya çıktısı destekleniyorsa tam rapor ayrı çıktı olarak kaydedilir; yerel projede `yazihane-raporlari/` kullanılır. Çıktı aracı yoksa rapor sohbette sunulur.
+Claude'da `/yazihane:yayin-kurulu bolum-05.docx`, ChatGPT'de ise Yazıhane seçiliyken "Bu bölümü yayın kuruluna okut" isteği altı temel okur bakışına ek olarak yapı haritasını, yalnız Tolstoy, Ahmet Haşim ve Sabahattin Ali merceklerini ve gerekliyse kısa etiketli iskeleyi çalıştırır. Sonuç dashboard ve PDF olarak verilir. Bağımsız görevler kullanılabildiğinde okurlar birbirinin görüşünü görmez. Baş editör her iddiayı metinde doğrular, aynı meseleleri birleştirir, okurların ayrıştığı yerleri "karar sizin" diye iki taraflı gösterir ve en fazla üç karar çıkarır. Dosya çıktısı destekleniyorsa tam rapor ayrı çıktı olarak kaydedilir; yerel projede `yazihane-raporlari/` kullanılır. Çıktı aracı yoksa rapor sohbette sunulur.
 
 | Okur | Ne yapar |
 |---|---|
@@ -34,7 +34,19 @@ Claude'da `/yazihane:yayin-kurulu bolum-05.docx`, ChatGPT'de ise Yazıhane seçi
 | Olgu denetçisi | Alıntı, atıf, tarih ve ayrıntı doğrulama |
 | Yayınevi okuru | Okur raporu: ses, okur kitlesi, kabul / revizyon / ret |
 
-`hızlı` eklerseniz yalnızca beta okur, geliştirme editörü ve yayınevi okuru çalışır. `usta:cehov` eklerseniz kurula bir ustanın merceği de katılır.
+`hızlı` eklerseniz yalnızca beta okur, geliştirme editörü ve yayınevi okuru çalışır; diğer kartlar çalıştırılmadı görünür. Toplu kurulun üç ustasını açık bir istekle değiştirebilirsiniz. Tek bir mod seçerseniz yalnız o mod uygulanır.
+
+## Dashboard ve PDF
+
+ChatGPT'de Yazıhane seçiliyken **“İlk dört bölümü yayın kurulu olarak değerlendir”** tam incelemeyi başlatır. **“@yazihane Dashboard”** mevcut doğrulanmış incelemeleri görsel raporda toplar. `@` seçimi arayüze bağlıdır; bunlar doğal dil çağrılarıdır. Claude'da `/yazihane:dashboard` kullanılabilir.
+
+- Dışta Campbell 17, içte Vogler 12 aşama; siyah noktalar son kanonik olaya dayanan iki ayrı konumu gösterir.
+- Yeşil: çalışıyor; sarı: gözden geçir; kırmızı: işlev eksik veya henüz yazılmadı; gri: taslak, not, ham veya okunmamış. Yazılmamış olması hata sayılmaz.
+- Bölüm kelime sayıları, sık kelimeler, 3–6 sözcüklü diziler, aynı cümle ve tanımlı bağlaç kalıpları yerleriyle hesaplanır. Yüzey biçimi sayılır; kök çözümlemesi yapılmaz, tekrar otomatik kusur değildir.
+- Editör, danışman, okur ve yayınevi simülasyonu özetleri, bütün inceleme kartları ve en fazla üç ortak karar.
+- Her kapsamlı incelemede yeni metinden güncellenen, çevrimdışı etkileşimli HTML ve gerçek vektör PDF; basit sorularda yeniden dosya üretilmez.
+
+Python çalıştırma aracı ve PDF için `reportlab` gerekir; PDF girdisi için `pypdf` kullanılır. Bunlar ortamda yoksa çıktı sınırı açıkça belirtilir. Yazarın kaynak dosyası değiştirilmez.
 
 ## Ustaların merceği
 
@@ -70,6 +82,7 @@ Her aşama için romanda nerede olduğunu (bölüm ve kısa alıntıyla) ve dör
 
 | Komut | Ne yapar |
 |---|---|
+| `/yazihane:dashboard` | İç içe yapı saatleri, ölçümler, HTML ve PDF |
 | `/yazihane:okur` | Yalnızca okur tepkisi |
 | `/yazihane:gelistirme` | Hikâye ve yapı üzerine en fazla üç ana mesele |
 | `/yazihane:satir` | Bütün itirazlar tek seferde (`temiz` derseniz temiz metin) |
@@ -105,7 +118,7 @@ python3 scripts/package_openai.py --check
 python3 scripts/package_openai.py
 ```
 
-İkinci komut `dist/yazihane-openai-0.7.0.zip` oluşturur. Paketin kökünde `plugin.json`, `skills/`, `templates/`, `assets/` ve lisans bulunur; Claude'a özgü ajan kayıtları pakete alınmaz. Okur prosedürleri becerilerin içindeki ortak kaynaklardan okunur.
+İkinci komut `dist/yazihane-openai-0.8.0.zip` oluşturur. Paketin kökünde `plugin.json`, `skills/`, `templates/`, `assets/` ve lisans bulunur; Claude'a özgü ajan kayıtları pakete alınmaz. Okur prosedürleri becerilerin içindeki ortak kaynaklardan okunur.
 
 Geliştirme sırasında paketi yerel marketplace desteğiyle kurup temiz bir sohbette deneyin; [resmî test rehberi](https://developers.openai.com/plugins/deploy/connect-chatgpt) kurulumu açıklar. Genel dizinde bulunabilmesi için doğrulanmış geliştirici kimliğiyle OpenAI'ye yüklenmesi, kontrollerin tamamlanması ve onay sonrası yayımlanması gerekir. Ayrıntılar [yayımlama rehberinde](docs/CHATGPT_YAYINLAMA.md). Henüz bir herkese açık ChatGPT kurulum bağlantısı yoktur.
 
@@ -138,7 +151,7 @@ Claude'daki `/yazihane:...` yazımı bütün ortamlarda kayıtlı bir slash komu
 
 ## Ne çalıştırır, nereye bağlanır
 
-- Çalışan eklenti yalnızca talimat dosyaları, kaynaklar, şablonlar ve simgeden oluşur. Kendi sunucusu, MCP bağlantısı veya kancası yoktur. Paketleme betiği yalnızca geliştiricinin hazırlık aracıdır; eklenti çalışırken yürütülmez.
+- Eklenti talimatlar, kaynaklar, şablonlar, simge ve dashboard için yerel Python betikleri içerir. Dashboard betikleri metni sayar, alıntıları doğrular ve HTML/PDF oluşturur; ağ isteği yapmaz. PDF için ReportLab kullanılır. Kendi sunucusu, MCP bağlantısı veya kancası yoktur. Paketleme betiği geliştiricinin hazırlık aracıdır.
 - Metninizi kullandığınız ortamın dosya araçlarıyla okur. Dönüştürme gerekiyorsa mevcut belge araçlarını; yerel ortamda kuruluysa `textutil` veya `pandoc` kullanabilir.
 - Raporları ayrı çıktı olarak verir; yerel projede `yazihane-raporlari/` ve `yayinevi-dosyasi/` kullanılır. Açık dosya düzenleme isteği olmadan özgün eseri değiştirmez.
 - Olgu denetçisi, alıntıları ve olgusal ayrıntıları doğrulamak için ortamın web araması ve sayfa okuma araçlarını kullanabilir; arama sorgularında metninizden kısa ifadeler geçebilir. Yayınevi dosyası, adını verdiğiniz yayınevinin koşullarını araştırabilir. İşleme ve saklama koşulları kullandığınız yapay zekâ hizmetinin ayarlarına ve politikalarına tabidir.
@@ -155,10 +168,12 @@ Hata bildirmek ya da öneride bulunmak için GitHub'daki [Issues](https://github
 
 ## Lisans
 
-MIT. Yazıhane'yi kullanabilir, değiştirebilir ve paylaşabilirsiniz; yalnızca lisans metnini ve yazarın adını koruyun. Ayrıntı için [LICENSE](LICENSE) dosyasına bakın.
+Dashboard ile paketlenen DejaVu fontları kendi lisanslarıyla dağıtılır; bildirim `skills/dashboard/assets/DejaVu-LICENSE.txt` içindedir.
+
+Diğer proje dosyaları MIT. Yazıhane'yi kullanabilir, değiştirebilir ve paylaşabilirsiniz; yalnızca lisans metnini ve yazarın adını koruyun. Ayrıntı için [LICENSE](LICENSE) dosyasına bakın.
 
 [Gizlilik Politikası](docs/PRIVACY.md) · [Kullanım Koşulları](docs/TERMS.md)
 
 ## In English
 
-Yazıhane ("the writing room") is a fiction-editing plugin with a Claude-compatible installation and a portable skills-only package for ChatGPT and Codex. Six reader perspectives review a chapter, and a chief editor verifies the findings and reduces them to at most three decisions. Separate readers require host subagent support; otherwise readings run sequentially in one session with an explicit disclosure. It also offers twelve literary lenses, spelling and continuity review, publisher submission drafts, and on-request Campbell/Vogler structure maps. It preserves the writer's voice and does not rewrite unasked. Instructions and reports default to Turkish. Public OpenAI directory availability requires submission, review and publication; this repository does not establish that approval.
+Yazıhane ("the writing room") is a fiction-editing plugin with a Claude-compatible installation and a portable skills package with local dashboard helpers for ChatGPT and Codex. Six reader perspectives review a chapter, and a chief editor verifies the findings and reduces them to at most three decisions. Separate readers require host subagent support; otherwise readings run sequentially in one session with an explicit disclosure. It also offers twelve literary lenses, spelling and continuity review, publisher submission drafts, and on-request Campbell/Vogler structure maps. It preserves the writer's voice and does not rewrite unasked. The full board defaults to Tolstoy, Ahmet Haşim and Sabahattin Ali lenses and exports a nested Campbell/Vogler dashboard with exact local metrics as HTML and PDF. Instructions and reports default to Turkish. Public OpenAI directory availability requires submission, review and publication; this repository does not establish that approval.
